@@ -13,7 +13,23 @@
 }
 
 .gradient-cloudy {
-    background-image: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+    background-image: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%);
+}
+
+.gradient-clear {
+    background-image: linear-gradient(135deg, #fddb92 0%, #72afd3 100%);
+}
+
+.gradient-rain {
+    background-image: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.gradient-thunderstorm {
+    background-image: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.gradient-snow {
+    background-image: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
 }
 
 .weather .container h1 {
