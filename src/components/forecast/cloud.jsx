@@ -6,8 +6,8 @@ class Cloud extends Component {
         return (
             <div>
                 <WeatherIcon name="owm" iconId={this.props.iconId}/>
-                <h1>It's {this.props.temperature}&deg;C in Brussels</h1>
-                <h3>"J'know bai, it's cloudy like"</h3>
+                <h1>It's {this.props.temperature}&deg;C in {this.props.city}</h1>
+                <h3>"It's fierce soft outside"</h3>
             </div>
         );
     }
