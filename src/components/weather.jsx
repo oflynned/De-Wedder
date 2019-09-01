@@ -14,6 +14,7 @@ class Weather extends Component {
     constructor() {
         super();
         this.state = {
+            allowedLocationPermissions: false,
             loading: true,
             conditions: null,
             description: null,
@@ -26,6 +27,7 @@ class Weather extends Component {
     componentDidMount() {
         return new Promise(res => navigator.geolocation.getCurrentPosition(({coords}) => res(coords)))
             .then(({latitude, longitude}) => {
+                this.setState({allowedLocationPermissions: true});
                 return fetchWeatherAPI(latitude, longitude);
             })
             .then(({weather, main, name}) => {
@@ -42,10 +44,22 @@ class Weather extends Component {
             })
             .catch(err => {
                 console.error(err);
+                this.setState({loading: false});
             })
     }
 
     render() {
+        const {allowedLocationPermissions} = this.state;
+        if (!allowedLocationPermissions) {
+            return (
+                <div className={"weather"}>
+                    <div className={"container"}>
+                        Please allow browser location permissions!
+                    </div>
+                </div>
+            );
+        }
+
         let {component, gradient} = this.assignWeather();
         return (
             <div className={"weather"}>
