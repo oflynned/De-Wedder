@@ -7,7 +7,7 @@ class Thunderstorm extends Component {
             <div>
                 <WeatherIcon name="owm" iconId={this.props.iconId}/>
                 <h1>It's {this.props.temperature}&deg;C in {this.props.city}</h1>
-                <h3>"It's spilling hey"</h3>
+                <h3>"It's pissing buckets"</h3>
             </div>
         );
     }
